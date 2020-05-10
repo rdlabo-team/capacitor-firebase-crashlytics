@@ -1,5 +1,5 @@
 {
-  "appId": "jp.rdlabo.capacitor.firebaseAnalytics",
+  "appId": "jp.rdlabo.capacitor.firebase",
   "appName": "angular",
   "bundledWebRuntime": false,
   "npmClient": "npm",
