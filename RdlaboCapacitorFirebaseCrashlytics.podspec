@@ -12,7 +12,6 @@
     s.dependency 'Capacitor'
 
 		s.dependency 'Firebase/Core'
-    s.dependency 'Fabric', '~> 1.10.2'
-    s.dependency 'Crashlytics', '~> 3.14.0'
+    s.dependency 'Firebase/Crashlytics'
     s.static_framework = true
   end

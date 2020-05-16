@@ -2,7 +2,7 @@ import Foundation
 import Capacitor
 
 import FirebaseCore
-import Crashlytics
+import FirebaseCrashlytics
 
 /**
  * Please read the Capacitor iOS Plugin Development Guide
@@ -23,15 +23,11 @@ public class FirebaseCrashlyticsPlugin: CAPPlugin {
     @objc func setCustomValue(_ call: CAPPluginCall) {
         let keyId = call.getString("key") ?? ""
         let valueId = call.getString("value") ?? ""
-        
         if keyId == "" || valueId == "" {
             call.error("You must pass key and value")
         }
-        
-        DispatchQueue.main.async {
-            Crashlytics.sharedInstance().setValue(valueId, forKey: keyId)
-            call.success()
-        }
+        Crashlytics.crashlytics().setCustomValue(valueId, forKey: keyId)
+        call.success()
     }
     
     @objc func setUserId(_ call: CAPPluginCall) {
@@ -39,9 +35,7 @@ public class FirebaseCrashlyticsPlugin: CAPPlugin {
         if id == "" {
             call.error("You must pass userId")
         }
-        DispatchQueue.main.async {
-            Crashlytics.sharedInstance().setUserIdentifier(id)
-            call.success()
-        }
+        Crashlytics.crashlytics().setUserID(id)
+        call.success()
     }
 }
