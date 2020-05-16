@@ -10,4 +10,9 @@
     s.source_files = 'ios/Plugin/**/*.{swift,h,m,c,cc,mm,cpp}'
     s.ios.deployment_target  = '11.0'
     s.dependency 'Capacitor'
+
+		s.dependency 'Firebase/Core'
+    s.dependency 'Fabric', '~> 1.10.2'
+    s.dependency 'Crashlytics', '~> 3.14.0'
+    s.static_framework = true
   end

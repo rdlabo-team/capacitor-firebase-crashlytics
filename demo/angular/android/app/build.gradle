@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -35,6 +36,7 @@ dependencies {
 }
 
 apply from: 'capacitor.build.gradle'
+
 
 try {
     def servicesJSON = file('google-services.json')

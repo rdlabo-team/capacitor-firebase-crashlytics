@@ -25,7 +25,8 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
-      Plugins.FirebaseAnalyticsPlugin.setUserId('12345');
+      Plugins.FirebaseCrashlyticsPlugin.setCustomValue({ key: 'keyName', value: 'valueName' });
+      Plugins.FirebaseCrashlyticsPlugin.setUserId({ id: '12345' });
     });
   }
 }

@@ -1,7 +1,8 @@
 import { WebPlugin } from '@capacitor/core';
-import { FirebaseCrashlyticsPluginPlugin } from './definitions';
+import { FirebaseCrashlyticsPluginInterface } from './definitions';
 
-export class FirebaseCrashlyticsPluginWeb extends WebPlugin implements FirebaseCrashlyticsPluginPlugin {
+export class FirebaseCrashlyticsPluginWeb extends WebPlugin implements FirebaseCrashlyticsPluginInterface {
+  _options: any;
   constructor() {
     super({
       name: 'FirebaseCrashlyticsPlugin',
@@ -9,15 +10,18 @@ export class FirebaseCrashlyticsPluginWeb extends WebPlugin implements FirebaseC
     });
   }
 
-  async echo(options: { value: string }): Promise<{value: string}> {
-    console.log('ECHO', options);
-    return options;
+  async setCustomValue(options: { key: string; value: string }): Promise<void> {
+    this._options = options;
+  }
+
+  async setUserId(options: { id: string }): Promise<void> {
+    this._options = options;
   }
 }
 
 const FirebaseCrashlyticsPlugin = new FirebaseCrashlyticsPluginWeb();
 
-export { FirebaseCrashlyticsPlugin };
+export { FirebaseCrashlyticsPluginInterface };
 
 import { registerWebPlugin } from '@capacitor/core';
 registerWebPlugin(FirebaseCrashlyticsPlugin);
