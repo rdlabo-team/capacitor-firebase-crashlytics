@@ -1,4 +1,4 @@
-# This development is finished. We reccomend https://github.com/capacitor-community/firebase-crashlytics
+# This development is closed. We reccomend https://github.com/capacitor-community/firebase-crashlytics
 
 [![npm version](https://badge.fury.io/js/%40rdlabo%2Fcapacitor-firebase-crashlytics.svg)](https://badge.fury.io/js/%40rdlabo%2Fcapacitor-firebase-crashlytics)
 
